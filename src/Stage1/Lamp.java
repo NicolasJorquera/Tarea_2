@@ -3,7 +3,9 @@ import javafx.scene.Node;
 public class Lamp {
     public Lamp (int channel){
         this.channel= channel;
-        r=g=b= 255;
+        r = 0.9;
+        g = 0.8;
+        b = 0;
         state = LampState.OFF;
         view = new LampView();
     }
@@ -19,7 +21,7 @@ public class Lamp {
         return view;
     }
     private int channel;
-    private short r,g,b;
+    private double r,g,b;
     private LampState state;
     private LampView view;
 }
