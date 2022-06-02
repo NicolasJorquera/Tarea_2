@@ -56,16 +56,20 @@ public class RollerShade extends DomoticDevice {
                     if (length + increment > MaxShadeLength){
                         length = MaxShadeLength;
                         state = MotorState.STOPPED;
+                        view.setLength(length);
                     }else{
                         length = length + increment;
+                        view.setLength(length);
                     }
                     break;
                 case UPWARD:
                     if (length - increment < 0){
                         length = 0;
                         state = MotorState.STOPPED;
+                        view.setLength(length);
                     }else{
                         length = length - increment;
+                        view.setLength(length);
                     }
 
                     break;
