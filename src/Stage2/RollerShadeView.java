@@ -21,7 +21,7 @@ public class RollerShadeView extends Group {
         //¿?
     }
     public void setLength(double length) {
-        // ¿?
+        cloth.setHeight(length);
     }
     private Rectangle cloth;
 }
