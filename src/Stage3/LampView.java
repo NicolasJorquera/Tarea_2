@@ -26,10 +26,9 @@ public class LampView extends Group {
                 30d, 5d,
                 10d, 5d);
         ls.setFill(Color.BLACK);
-        if (channel == 3){
-            ls.setTranslateX(30);
-            base.setTranslateX(30);
-        }
+        ls.setTranslateX(30*id);
+        base.setTranslateX(30*id);
+
 
         getChildren().addAll(base, ls);
         lampshade = ls;
