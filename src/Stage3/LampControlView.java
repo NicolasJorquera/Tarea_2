@@ -3,9 +3,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
-public class LampControlView extends VBox {
+public class LampControlView extends BorderPane {
     public LampControlView(LampControl lampControl) {
         Image img = new Image("rsc/powerImage.jpg");
         TextField lampChannelInput = new TextField();
@@ -24,6 +25,7 @@ public class LampControlView extends VBox {
         view.setOnMouseClicked(value ->  {
             lampControl.pressPower();
         });
-        getChildren().addAll(view, lampChannelInput);
+        setTop(view);
+        setCenter(lampChannelInput);
     }
 }
