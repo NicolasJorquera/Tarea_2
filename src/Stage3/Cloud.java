@@ -29,6 +29,10 @@ public class Cloud {
         Lamp l=getLampAtChannel(channel);
         if (l != null) l.changePowerState();
     }
+    public void changeLampColor(int channel, int r, int g, int b){
+        Lamp l=getLampAtChannel(channel);
+        if (l != null) l.changeColor(r, g, b);
+    }
     public void startShadeUp(int channel){
         RollerShade rs = getRollerShadeAtChannel(channel);
         if (rs != null) rs.startUp();

@@ -13,6 +13,9 @@ public class LampControl {
     public void pressPower(){
         cloud.changeLampPowerState(channel);
     }
+    public void changeColor(int r, int g, int b){
+        cloud.changeLampColor(channel, r, g, b);
+    }
     public int getChannel(){
         return channel;
     }

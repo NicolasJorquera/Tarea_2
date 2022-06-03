@@ -1,7 +1,8 @@
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 public class ShadeControlView extends BorderPane {
     public ShadeControlView (ShadeControl shadeControl){
@@ -29,6 +30,6 @@ public class ShadeControlView extends BorderPane {
         setCenter(channelButton);
         setTop(view1);
         setBottom(view2);
-        // ¿?
+
     }
 }

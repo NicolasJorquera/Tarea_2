@@ -12,6 +12,11 @@ public class Lamp {
     public int getChannel(){
         return channel;
     }
+    public void changeColor(int red, int green, int blue){
+        r = Double.valueOf(red)/255;
+        g = Double.valueOf(green)/255;
+        b = Double.valueOf(blue)/255;
+    }
     public void changePowerState(){
         state = state==LampState.ON ? LampState.OFF : LampState.ON;
         if (state==LampState.OFF) {
