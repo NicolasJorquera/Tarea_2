@@ -1,5 +1,6 @@
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Line;
@@ -17,6 +18,11 @@ public class RollerShadeView extends Group {
         getChildren().add(cloth);
 
         Cylinder roller = new Cylinder(5, width);
+
+        PhongMaterial blueStuff = new PhongMaterial();
+        blueStuff.setDiffuseColor(Color.DARKRED);
+        roller.setMaterial(blueStuff);
+
         roller.setRotate(90);
         roller.setTranslateX(width/2);
         getChildren().add(roller);

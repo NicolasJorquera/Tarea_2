@@ -10,9 +10,14 @@ public class RollerShade extends DomoticDevice {
     public RollerShade (int channel, double alpha, double width, double len) {
         super(channel);
         motor = new Motor(alpha);
-        MaxShadeLength = len;
+        MaxShadeLength = 20;
+        if (channel == 2){
+            MaxShadeLength = width-5; //relacion 1:1
+        }else if(channel == 3){
+            MaxShadeLength = Math.round(width/2) +10; //relacion 16:19
+        }
         this.length = 0;  // Start with roller shade open.
-        view = new RollerShadeView(MaxShadeLength, width, length, RADIUS, Color.GREEN);
+        view = new RollerShadeView(MaxShadeLength, width, channel, RADIUS, Color.GREEN);
     }
     public Group getView() { return view;}
     public void startUp(){
@@ -84,6 +89,6 @@ public class RollerShade extends DomoticDevice {
     private RollerShadeView view;
     private Motor motor;
     private double length;
-    private final double MaxShadeLength;
+    private double MaxShadeLength;
     private static double RADIUS=4;  //cm
 }
